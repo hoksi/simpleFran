@@ -1,0 +1,1 @@
+@%~dp0\bin\swoole-cli-v5.0.3-cygwin-x64\bin\swoole-cli.exe %*

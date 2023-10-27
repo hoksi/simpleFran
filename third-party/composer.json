@@ -1,0 +1,6 @@
+{
+    "require": {
+        "swoole/ide-helper": "~5.0.0",
+        "intervention/image": "^2.7"
+    }
+}
