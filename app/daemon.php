@@ -20,7 +20,7 @@ $server = new Swoole\Http\Server('127.0.0.1', 9501);
 $server->set([
     'worker_num' => 4, // 워커 프로세스의 개수를 설정합니다.
     'daemonize' => true, // 데몬 모드로 실행할지 여부를 설정합니다.
-    'max_request' => 10000, // 워커 프로세스가 처리할 수 있는 최대 요청 수를 설정합니다.
+    'max_request' => 100, // 워커 프로세스가 처리할 수 있는 최대 요청 수를 설정합니다.
     'dispatch_mode' => 1, // 요청을 워커 프로세스에 할당하는 방식을 설정합니다.
     'log_file' => __DIR__ . '/daemon.log', // 로그 파일의 경로를 설정합니다.
 ]);
