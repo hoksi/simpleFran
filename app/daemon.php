@@ -10,8 +10,9 @@ if (strchr(PHP_OS, 'CYGWIN')) {
 }
 // public 디렉터리의 경로를 정의합니다.
 defined('PUBLIC_PATH') or define('PUBLIC_PATH', realpath(APP_PATH . '/../public'));
+defined('THIRDPARTY_PATH') or define('THIRDPARTY_PATH', realpath(APP_PATH . '/../third-party'));
 
-require_once 'third-party/vendor/autoload.php';
+require_once THIRDPARTY_PATH . '/vendor/autoload.php';
 
 // Swoole\Http\Server 객체를 생성합니다.
 $server = new Swoole\Http\Server('127.0.0.1', 9501);
