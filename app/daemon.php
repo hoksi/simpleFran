@@ -2,6 +2,8 @@
 // Swoole 확장을 로드합니다.
 extension_loaded('swoole') or die('Swoole extension is not loaded.');
 
+echo PHP_OS . PHP_EOL;
+
 // APP_PATH 상수를 정의합니다.
 if (strchr(PHP_OS, 'CYGWIN')) {
     defined('APP_PATH') or define('APP_PATH', __DIR__ . '/app');
@@ -15,12 +17,12 @@ defined('THIRDPARTY_PATH') or define('THIRDPARTY_PATH', realpath(APP_PATH . '/..
 require_once THIRDPARTY_PATH . '/vendor/autoload.php';
 
 // Swoole\Http\Server 객체를 생성합니다.
-$server = new Swoole\Http\Server('127.0.0.1', 9501);
+$server = new Swoole\Http\Server('0.0.0.0', 9501);
 
 // 웹서버 설정을 합니다.
 $server->set([
-    'worker_num' => 4, // 워커 프로세스의 개수를 설정합니다.
-    'daemonize' => true, // 데몬 모드로 실행할지 여부를 설정합니다.
+    'worker_num' => 1, // 워커 프로세스의 개수를 설정합니다.
+    'daemonize' => false, // 데몬 모드로 실행할지 여부를 설정합니다.
     'max_request' => 100, // 워커 프로세스가 처리할 수 있는 최대 요청 수를 설정합니다.
     'dispatch_mode' => 1, // 요청을 워커 프로세스에 할당하는 방식을 설정합니다.
     'log_file' => __DIR__ . '/daemon.log', // 로그 파일의 경로를 설정합니다.
@@ -64,7 +66,7 @@ $server->on('request', function (Swoole\Http\Request $request, Swoole\Http\Respo
         $__session_id__ = ($request->cookie['PHPSESSID'] ?? null);
 
         $redis = new Redis();
-        $redis->connect('127.0.0.1', 6379);
+        $redis->connect('host.docker.internal', 6379);
 
         if($__session_id__ === null) {
             $__session_id__ = uniqid();

@@ -15,6 +15,10 @@ class ComposerStaticInit53296801dad7f22d55a52d78eaa3024c
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'L' => 
+        array (
+            'Laminas\\EventManager\\' => 21,
+        ),
         'I' => 
         array (
             'Intervention\\Image\\' => 19,
@@ -28,8 +32,12 @@ class ComposerStaticInit53296801dad7f22d55a52d78eaa3024c
     public static $prefixDirsPsr4 = array (
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Laminas\\EventManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laminas/laminas-eventmanager/src',
         ),
         'Intervention\\Image\\' => 
         array (
