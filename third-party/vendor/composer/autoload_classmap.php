@@ -7,4 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Hoksi\\Qb\\CI_DB_driver' => $baseDir . '/../class/Hoksi/Qb/CI_DB_driver.php',
+    'Hoksi\\Qb\\CI_DB_query_builder' => $baseDir . '/../class/Hoksi/Qb/CI_DB_query_builder.php',
+    'Hoksi\\Qb\\NunaQb' => $baseDir . '/../class/Hoksi/Qb/NunaQb.php',
+    'Hoksi\\Qb\\NunaResult' => $baseDir . '/../class/Hoksi/Qb/NunaResult.php',
+    'Hoksi\\Qb\\Qb' => $baseDir . '/../class/Hoksi/Qb/Qb.php',
 );

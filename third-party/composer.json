@@ -3,5 +3,18 @@
         "swoole/ide-helper": "~5.0.0",
         "intervention/image": "^2.7",
         "laminas/laminas-eventmanager": "^3.12"
+    },
+    "autoload": {
+        "files": [
+            "../helper/common.helper.php"
+        ],
+        "psr-4": {
+            "Forbiz\\Model\\": "../models",
+            "CodeIgniter\\": "../class/CodeIgniter",
+            "Template_\\": "../class/Template_.2.2.8"
+        },
+        "classmap": [
+            "../class/Hoksi"
+        ]
     }
 }
