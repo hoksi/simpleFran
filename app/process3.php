@@ -14,6 +14,8 @@ run(function () {
     swoole_timer_tick(1000, function () {
         echo "parent timer\n";
     });
+
+    Swoole\
 });
 
 $p->start();
